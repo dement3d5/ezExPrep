@@ -1,4 +1,6 @@
 ﻿using ezExPrep.DB;
+using ezExPrep.Models;
+using ezExPrep.VM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,7 +45,7 @@ namespace ezExPrep
                         OpenAdminWindow();
                         break;
                     case "chef":
-                        OpenChefWindow();
+                        OpenChefWindow(user.Id);
                         break;
                     case "waiter":
                         OpenWaiterWindow();
@@ -78,13 +80,12 @@ namespace ezExPrep
 
         private void OpenAdminWindow()
         {
-
             AdminWin adminWindow = new AdminWin();
             adminWindow.Show();
             this.Close();
         }
 
-        private void OpenChefWindow()
+        private void OpenChefWindow(int chefId)
         {
 
             ChefWin chefWindow = new ChefWin();

@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ezExPrep"
         mc:Ignorable="d"
-        Title="ChefWin" Height="450" Width="800">
+            Title="ChefWin" Height="450" Width="800">
     <Grid>
-        
+        <ListView ItemsSource="{Binding orders}" SelectedItem="{Binding ListOrder}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="250" Header="Статус">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding OrderStaus.Title}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="250" Header="Блюда">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Product.Title}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="250" Header="Стоимость" DisplayMemberBinding="{Binding Cost}"/>
+                </GridView>
+            </ListView.View>
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Готовиться" Click="Gotovitsa_Click"/>
+                    <MenuItem Header="Готов" Click="Gotov_Click"/>
+                    <MenuItem Header="Обновить" Click="Update_Click"/>
+
+                </ContextMenu>
+            </ListView.ContextMenu>
+        </ListView>
     </Grid>
 </Window>

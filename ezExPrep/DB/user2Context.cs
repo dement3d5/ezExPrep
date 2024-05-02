@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ezExPrep.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -15,15 +16,6 @@ namespace ezExPrep.DB
             : base(options)
         {
         }
-
-        static user2Context instance;
-        public static user2Context GetInstance()
-        {
-            if (instance == null)
-                instance = new user2Context();
-            return instance;
-        }
-
 
         public virtual DbSet<Order> Orders { get; set; } = null!;
         public virtual DbSet<OrderStatus> OrderStatuses { get; set; } = null!;
@@ -46,6 +38,8 @@ namespace ezExPrep.DB
             modelBuilder.Entity<Order>(entity =>
             {
                 entity.ToTable("Order");
+
+                entity.Property(e => e.Cost).HasMaxLength(50);
 
                 entity.HasOne(d => d.OrderStaus)
                     .WithMany(p => p.Orders)

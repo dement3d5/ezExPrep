@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ezExPrep.VM;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,34 @@ namespace ezExPrep
         public ChefWin()
         {
             InitializeComponent();
+            DataContext = new ChefVM();
         }
+
+        private void Gotovitsa_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is ChefVM chefVM && chefVM.ListOrder != null)
+            {
+                chefVM.UpdateOrderStatus(chefVM.ListOrder, "Готовиться", 3);
+            }
+        }
+
+        private void Gotov_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is ChefVM chefVM && chefVM.ListOrder != null)
+            {
+                chefVM.UpdateOrderStatus(chefVM.ListOrder, "Готов", 4);
+            }
+        }
+
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is ChefVM chefVM)
+            {
+                chefVM.RefreshOrders();
+
+            }
+        }
+
+      
     }
 }
