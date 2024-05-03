@@ -1,5 +1,4 @@
-﻿using ezExPrep.Tools;
-using ezExPrep.Windows;
+﻿using ezExPrep.VM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,23 +13,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ezExPrep
+namespace ezExPrep.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для WaiterWin.xaml
+    /// Логика взаимодействия для AddOrderWaiterWindow.xaml
     /// </summary>
-    public partial class WaiterWin : Window
+    public partial class AddOrderWaiterWindow : Window
     {
-        public WaiterWin()
+        public AddOrderWaiterWindow()
         {
             InitializeComponent();
-            DataContext = new MainVM();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            AddOrderWaiterWindow aoww = new AddOrderWaiterWindow();
-            aoww.Show();
+            DataContext = new AddOrder();
         }
     }
 }

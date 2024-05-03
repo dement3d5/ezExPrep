@@ -17,6 +17,14 @@ namespace ezExPrep.DB
         {
         }
 
+        static user2Context instence;
+        public static user2Context GetInstance()
+        {
+            if (instence == null)
+                instence = new user2Context();
+            return instence;
+        }
+
         public virtual DbSet<Order> Orders { get; set; } = null!;
         public virtual DbSet<OrderStatus> OrderStatuses { get; set; } = null!;
         public virtual DbSet<Product> Products { get; set; } = null!;

@@ -13,8 +13,8 @@
         </Grid.RowDefinitions>
         <Grid Grid.RowSpan="1">
             <StackPanel Grid.Row="0" Orientation="Horizontal">
-                <Button Grid.Column="0" Command="{Binding Teams}" Width="80">Заказы</Button>
-                <Button Grid.Column="0" Command="{Binding Teams}" Width="126">Оформить заказ</Button>
+                <Button Grid.Column="0" Command="{Binding OrdersPage}" Width="80">Заказы</Button>
+                <Button Grid.Column="0" Width="126" Click="Button_Click">Оформить заказ</Button>
             </StackPanel>
         </Grid>
 

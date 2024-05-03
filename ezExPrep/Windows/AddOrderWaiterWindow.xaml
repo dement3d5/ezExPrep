@@ -1,0 +1,27 @@
+﻿<Window x:Class="ezExPrep.Windows.AddOrderWaiterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ezExPrep.Windows"
+        mc:Ignorable="d"
+        Title="AddOrderWaiterWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="167*"/>
+            <ColumnDefinition Width="171*"/>
+            <ColumnDefinition Width="62*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="141*"/>
+            <RowDefinition Height="116*"/>
+            <RowDefinition Height="177*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Название" HorizontalAlignment="Left" Margin="209,57,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <ComboBox Margin="11,53,65,36" Grid.Column="1" ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}" DisplayMemberPath="Title" />
+
+        <Button Content="Добавить" Command="{Binding ADD}" HorizontalAlignment="Left" Margin="11,17,0,0" VerticalAlignment="Top" FontSize="24" Grid.Row="2" Grid.Column="1"/>
+        <Label Content="Стоимость" HorizontalAlignment="Left" Margin="175,27,0,0" VerticalAlignment="Top" FontSize="24" Grid.Row="1" Width="159"/>
+        <TextBox Text="{Binding Cost}" HorizontalAlignment="Left" Margin="10,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267" Height="55" FontSize="24" Grid.Column="1" Grid.Row="1"/>
+    </Grid>
+</Window>

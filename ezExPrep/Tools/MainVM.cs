@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ezExPrep.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,13 +22,25 @@ namespace ezExPrep.Tools
             }
         }
 
+        public CommandVM OrdersPage { get; set; }
+        public CommandVM UsersPage { get; set; }  
+
         public MainVM() 
         {
+            OrdersPage = new CommandVM(() =>
+            {
+                CurrentPage = new ListOrdersWaiterPage();
+
+            });
+            UsersPage = new CommandVM(() =>
+            {
+                CurrentPage = new ListOrdersWaiterPage();
+
+            });
 
 
-        
-        
-        
+
+
         }
 
     }
