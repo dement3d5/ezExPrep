@@ -1,4 +1,5 @@
 ﻿using ezExPrep.VM;
+using ezExPrep.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,34 +18,27 @@ using System.Windows.Shapes;
 namespace ezExPrep.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для ListOrdersWaiterPage.xaml
+    /// Логика взаимодействия для AdminOrderList.xaml
     /// </summary>
-    public partial class ListOrdersWaiterPage : Page
+    public partial class AdminOrderList : Page
     {
-        public ListOrdersWaiterPage()
+        public AdminOrderList()
         {
             InitializeComponent();
-            DataContext = new WaiterVM();
+            DataContext = new AdminVM();
         }
 
-       
 
         private void Update_Click(object sender, RoutedEventArgs e)
         {
-            if (DataContext is WaiterVM waiterVM)
+            if (DataContext is AdminVM adminVM)
             {
-                waiterVM.RefreshOrders();
+                adminVM.RefreshOrders();
 
             }
 
         }
 
-        private void Sold_Click(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is WaiterVM waiterVM && waiterVM.ListOrder != null)
-            {
-                waiterVM.UpdateOrderStatus(waiterVM.ListOrder, 2);
-            }
-        }
+
     }
 }

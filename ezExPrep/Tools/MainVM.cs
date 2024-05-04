@@ -22,6 +22,9 @@ namespace ezExPrep.Tools
             }
         }
 
+        public CommandVM Orders { get; set; }  
+        public CommandVM Users { get; set; }
+
         public CommandVM OrdersPage { get; set; }
         public CommandVM UsersPage { get; set; }  
 
@@ -38,7 +41,17 @@ namespace ezExPrep.Tools
 
             });
 
+            Orders = new CommandVM(() =>
+            {
+                CurrentPage = new AdminOrderList();
 
+            });
+
+            Users = new CommandVM(() =>
+            {
+                CurrentPage = new ListUsersPage();
+
+            });
 
 
         }

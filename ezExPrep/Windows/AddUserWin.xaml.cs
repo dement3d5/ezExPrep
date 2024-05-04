@@ -1,4 +1,4 @@
-﻿using ezExPrep.Tools;
+﻿using ezExPrep.VM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,17 +13,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ezExPrep
+namespace ezExPrep.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для AdminWin.xaml
+    /// Логика взаимодействия для AddUserWin.xaml
     /// </summary>
-    public partial class AdminWin : Window
+    public partial class AddUserWin : Window
     {
-        public AdminWin()
+        public AddUserWin()
         {
             InitializeComponent();
-            DataContext = new MainVM();
+            DataContext = new AddUserVM();
         }
     }
 }

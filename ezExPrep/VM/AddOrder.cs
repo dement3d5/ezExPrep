@@ -23,26 +23,24 @@ namespace ezExPrep.VM
 
         public AddOrder()
         {
-            using (var context = new user2Context())
+            using (var db = new user2Context())
             {
-                Products = context.Products.ToList();
+                Products = db.Products.ToList();
             }
 
             ADD = new CommandVM(() =>
             {
-                using (var context = new user2Context())
+                using (var db = new user2Context())
                 {
-                    var orderStatus = context.OrderStatuses.FirstOrDefault(s => s.Id == 4); // Получаем статус "Принят"
-
+                    var orderStatus = db.OrderStatuses.FirstOrDefault(s => s.Id == 1);
                     var order = new Order
                     {
                         ProductId = SelectedProduct.Id,
                         Cost = Cost,
                         OrderStaus = orderStatus
                     };
-
-                    context.Orders.Add(order);
-                    context.SaveChanges();
+                    db.Orders.Add(order);
+                    db.SaveChanges();
                     MessageBox.Show("Заказ сохранен.");
                 }
             });

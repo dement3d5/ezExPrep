@@ -28,22 +28,14 @@ namespace ezExPrep.VM
             }
         }
 
-        public void UpdateOrderStatus(Order order, string statusTitle, int statusId)
+        public void UpdateOrderStatus(Order order, int statusId)
         {
             using (var db = new user2Context())
             {
-                var updatedOrder = db.Orders.Include(o => o.OrderStaus).FirstOrDefault(o => o.Id == order.Id);
+                var updatedOrder = db.Orders.FirstOrDefault(o => o.Id == order.Id);
                 if (updatedOrder != null)
                 {
                     updatedOrder.OrderStausId = statusId;
-                    if (updatedOrder.OrderStaus != null)
-                    {
-                        updatedOrder.OrderStaus.Title = statusTitle;
-                    }
-                    else
-                    {
-                        updatedOrder.OrderStaus = new OrderStatus { Title = statusTitle };
-                    }
                     db.SaveChanges();
                 }
             }

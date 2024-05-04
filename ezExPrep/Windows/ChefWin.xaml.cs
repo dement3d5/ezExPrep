@@ -30,7 +30,7 @@ namespace ezExPrep
         {
             if (DataContext is ChefVM chefVM && chefVM.ListOrder != null)
             {
-                chefVM.UpdateOrderStatus(chefVM.ListOrder, "Готовиться", 3);
+                chefVM.UpdateOrderStatus(chefVM.ListOrder, 4);
             }
         }
 
@@ -38,7 +38,7 @@ namespace ezExPrep
         {
             if (DataContext is ChefVM chefVM && chefVM.ListOrder != null)
             {
-                chefVM.UpdateOrderStatus(chefVM.ListOrder, "Готов", 4);
+                chefVM.UpdateOrderStatus(chefVM.ListOrder, 3);
             }
         }
 

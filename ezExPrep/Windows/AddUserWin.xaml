@@ -1,0 +1,18 @@
+﻿<Window x:Class="ezExPrep.Windows.AddUserWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ezExPrep.Windows"
+        mc:Ignorable="d"
+        Title="AddUserWin" Height="450" Width="800">
+    <Grid>
+        <Button Content="Добавить" Command="{Binding ADD}" HorizontalAlignment="Center" Margin="0,359,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <Label Content="Логин" HorizontalAlignment="Left" Margin="174,146,0,0" VerticalAlignment="Top" FontSize="24" Width="143"/>
+        <TextBox Text="{Binding Login}" HorizontalAlignment="Left" Margin="373,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267" Height="55" FontSize="24"/>
+        <TextBox Text="{Binding Password}" HorizontalAlignment="Left" Margin="373,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267" Height="55" FontSize="24"/>
+        <Label Content="Пароль" HorizontalAlignment="Left" Margin="174,224,0,0" VerticalAlignment="Top" FontSize="24" Width="159"/>
+        <Label Content="Роль" HorizontalAlignment="Left" Margin="174,297,0,0" VerticalAlignment="Top" FontSize="24" Width="159"/>
+        <ComboBox ItemsSource="{Binding Roles}" SelectedItem="{Binding SelectedRole}" DisplayMemberPath="Title" Margin="373,289,160,88"/>
+    </Grid>
+</Window>
