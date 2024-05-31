@@ -1,5 +1,5 @@
-﻿using ezExPrep.DB;
-using ezExPrep.Models;
+﻿using ezExPrep;
+
 using ezExPrep.Tools;
 using System;
 using System.Collections.Generic;
@@ -15,11 +15,10 @@ namespace ezExPrep.VM
     {
         public string Cost { get; set; }
         public List<Order> Order { get; }
-
         public CommandVM ADD { get; set; }
-
         public List<Product> Products { get; set; }
         public Product SelectedProduct { get; set; }
+        public DateTime Data { get; set; }
 
         public AddOrder()
         {
@@ -37,7 +36,8 @@ namespace ezExPrep.VM
                     {
                         ProductId = SelectedProduct.Id,
                         Cost = Cost,
-                        OrderStaus = orderStatus
+                        OrderStaus = orderStatus,
+                        Data = Data
                     };
                     db.Orders.Add(order);
                     db.SaveChanges();

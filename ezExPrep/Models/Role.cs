@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ezExPrep.Models
+namespace ezExPrep
 {
     public partial class Role
     {

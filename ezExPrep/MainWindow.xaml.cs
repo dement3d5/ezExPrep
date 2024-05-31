@@ -1,6 +1,4 @@
-﻿using ezExPrep.DB;
-using ezExPrep.Models;
-using ezExPrep.VM;
+﻿using ezExPrep.VM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -99,6 +97,11 @@ namespace ezExPrep
             WaiterWin waiterWindow = new WaiterWin();
             waiterWindow.Show();
             this.Close();
+        }
+
+        private void txt_login_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

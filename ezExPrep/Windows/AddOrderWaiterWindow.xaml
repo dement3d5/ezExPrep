@@ -15,13 +15,16 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="141*"/>
             <RowDefinition Height="116*"/>
-            <RowDefinition Height="177*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="102*"/>
         </Grid.RowDefinitions>
         <Label Content="Название" HorizontalAlignment="Left" Margin="209,57,0,0" VerticalAlignment="Top" FontSize="24"/>
         <ComboBox Margin="11,53,65,36" Grid.Column="1" ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}" DisplayMemberPath="Title" />
 
-        <Button Content="Добавить" Command="{Binding ADD}" HorizontalAlignment="Left" Margin="11,17,0,0" VerticalAlignment="Top" FontSize="24" Grid.Row="2" Grid.Column="1"/>
+        <Button Content="Добавить" Command="{Binding ADD}" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top" FontSize="24" Grid.Row="3" Grid.Column="1"/>
         <Label Content="Стоимость" HorizontalAlignment="Left" Margin="175,27,0,0" VerticalAlignment="Top" FontSize="24" Grid.Row="1" Width="159"/>
         <TextBox Text="{Binding Cost}" HorizontalAlignment="Left" Margin="10,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267" Height="55" FontSize="24" Grid.Column="1" Grid.Row="1"/>
+        <Label Content="Дата" HorizontalAlignment="Left" Margin="167,0,0,0" VerticalAlignment="Center" FontSize="24" Grid.Row="2" Width="159"/>
+        <DatePicker SelectedDate="{Binding Data}" Margin="12,17,65,10" Grid.Column="1" Grid.Row="2" />
     </Grid>
 </Window>
